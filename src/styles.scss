@@ -1,0 +1,142 @@
+@import "./app/styles/variables";
+
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #1a1a1a;
+  margin: 0;
+  position: middle;
+  justify-content: center;
+  color: white; /* Ensuring text is legible against the dark background */
+}
+
+/* Link styling */
+a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-out; 
+}
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 0 15px; /* Padding for some breathing room */
+}
+
+/* Utility Classes */
+/* Top padding utility */
+.padding-top-60 {
+  padding-top: 60px;
+}
+
+/* Flex-start alignment utility */
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* Loading Animation */
+.cssloader {
+  padding-top: calc(45vh - 25px); /* Centering the loader vertically */
+}
+
+/* Loader shapes with animations */
+.sh1, .sh2 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin: 0 auto;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.sh1 {
+  border-width: 50px 50px 0 0;
+  border-color: #354952 transparent transparent transparent;
+  animation-name: rotate-sh1;
+}
+
+.sh2 {
+  border-width: 0 0 50px 50px;
+  border-color: transparent transparent #df1a54 transparent;
+  margin-top: -50px;
+  animation-name: rotate-sh2;
+  animation-direction: alternate;
+}
+
+/* Animations */
+@keyframes rotate-sh1 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-sh2 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Loading Text Styling */
+.lt {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  margin: 30px auto;
+  text-align: center;
+  font-weight: 100;
+  letter-spacing: 10px; 
+}
+
+/* Responsive Design */
+/* Extra small devices (portrait phones) */
+@media (max-width: $breakpoint-xs) {
+  .container {
+    max-width: $breakpoint-xs;
+    padding: 0;
+  }
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: $breakpoint-lg) {
+  .container {
+    max-width: 1140px;
+  }
+}

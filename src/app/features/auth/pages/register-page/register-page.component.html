@@ -1,0 +1,30 @@
+<div class="register-container">
+  <div class="register-header">
+      <h2>Create Your Account</h2>
+      <p>Sign up to start your journey.</p>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <div class="form-group">
+          <p class="login-link">Already have an account? <a routerLink="/login">Login here</a></p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" class="form-control">
+          <div *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched" class="error-message">
+            Email is required.
+          </div>
+          <div *ngIf="registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched" class="error-message">
+            Please enter a valid email.
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" class="form-control">
+          <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="error-message">
+            Password is required.
+          </div>
+          <div *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched" class="error-message">
+            Password must be at least 8 characters.
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+  </form>
+</div>

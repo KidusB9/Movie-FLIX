@@ -1,0 +1,95 @@
+@import "./../../../styles/variables.scss";
+
+.navbar__container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: .4s;
+  z-index: 100;
+
+  @media (max-width: $breakpoint-xs) {
+    position: static;
+    background: #212121;
+  }
+}
+
+.colored__scrolled {
+  background-color: #212121;
+  transition: .4s;
+}
+
+.navbar__nav {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+
+  img {
+    width: 9rem;
+    height: 100%;
+
+    @media (max-width: $breakpoint-xs) {
+      width: 7rem;
+    }
+  }
+}
+
+.navbar__logo {
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: $breakpoint-xs) {
+    gap: 4px;
+  }
+
+  mat-icon {
+    color: #fff;
+  }
+
+  a, button {
+    transition: all .3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #f0f0f0;
+      color: #000;
+      transform: translateY(-2px);
+    }
+  }
+
+  a[aria-label="Movies"],
+  a[aria-label="TV Shows"] {
+    background-color: #000000;
+    color: white;
+
+    &:hover {
+      background-color: darken(#647282, 5%);
+      color: #fff;
+    }
+  }
+}
+
+button {
+  background-color: #dc3545;
+  color: white;
+
+  &:hover {
+    background-color: darken(#dc3545, 5%);
+    color: #fff;
+  }
+}

@@ -1,0 +1,21 @@
+<div
+  [ngClass]="{
+    'blue-theme': checkSelectedTheme(themeColorEnum.BLUE),
+    'green-theme': checkSelectedTheme(themeColorEnum.GREEN)
+  }">
+
+  <!--Desktop Navbar-->
+  <app-navbar (changeColorTheme)="changeColorTheme($event)"></app-navbar>
+  <!-- In your app.component.html or another template -->
+
+
+
+  <!--Main Routing-->
+  <main role="main" style="min-height: 88vh">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer Component -->
+  <app-footer></app-footer>
+
+</div>

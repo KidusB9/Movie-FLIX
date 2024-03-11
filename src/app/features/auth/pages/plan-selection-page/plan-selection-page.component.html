@@ -1,0 +1,54 @@
+<!-- plan-selection-page.component.html -->
+<div class="plan-selection-container">
+  <h1 class="selection-title">Choose the Perfect Plan for You</h1>
+  <p class="selection-subtitle">All plans include a full catalog of HD and Ultra HD content, the ability to watch on any device, and cancel at any time.</p>
+  <form [formGroup]="planForm" (ngSubmit)="onSubmit()" class="subscription-plans">
+
+      <!-- Basic Plan -->
+      <div class="plan basic-plan">
+          <h2>Basic Plan</h2>
+          <p class="plan-price">Starting at $8.99/month</p>
+          <ul class="plan-features">
+              <li>Watch on 1 screen at a time in Standard Definition</li>
+              <li>Download videos on 1 phone or tablet</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+          </ul>
+          <input type="radio" id="basic" name="plan" value="basic" formControlName="plan">
+          <label for="basic">Select Basic</label>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="plan standard-plan">
+          <h2>Standard Plan</h2>
+          <p class="plan-price">Starting at $13.99/month</p>
+          <ul class="plan-features">
+              <li>Watch on 2 screens at a time with HD available</li>
+              <li>Download videos on 2 phones or tablets</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+          </ul>
+          <input type="radio" id="standard" name="plan" value="standard" formControlName="plan">
+          <label for="standard">Select Standard</label>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="plan premium-plan">
+          <h2>Premium Plan</h2>
+          <p class="plan-price">Starting at $17.99/month</p>
+          <ul class="plan-features">
+              <li>Watch on 4 screens at a time with HD and Ultra HD available</li>
+              <li>Download videos on 4 phones or tablets</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+          </ul>
+          <input type="radio" id="premium" name="plan" value="premium" formControlName="plan">
+          <label for="premium">Select Premium</label>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-submit">
+          <button type="submit" class="btn btn-primary" [disabled]="!planForm.valid">Continue</button>
+      </div>
+  </form>
+</div>

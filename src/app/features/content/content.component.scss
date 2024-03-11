@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.contents {
+  color: #fff;
+  padding-top: 60px;
+
+  &__container {
+    display: flex;
+    flex-direction: column; // Changed to column
+    align-items: center; // Center items for better alignment
+    gap: 16px;
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: row; // Ensure filters are in a row
+    gap: 8px;
+    padding: 8px; // Reduced padding
+    justify-content: center; // Center the filter buttons
+    flex-wrap: wrap; // Allow wrapping if needed
+    width: 100%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%; // Ensure list takes full width
+
+    @media (max-width: $breakpoint-xs) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) {
+      grid-template-columns: repeat(3, minmax(0, 1fr)); // Adjusted for sm breakpoint
+    }
+  }
+}

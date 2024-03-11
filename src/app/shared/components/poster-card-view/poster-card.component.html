@@ -1,0 +1,45 @@
+<div class="poster">
+  <!-- Enhanced dynamic navigation with better readability and accessibility -->
+  <a [routerLink]="isMovie ? '/movies/' + model.id : '/tv-shows/' + model.id"
+     [title]="'Explore details about ' + (model.title || model.name)"
+     class="poster__link">
+    <!-- Optimized image rendering with srcset for responsive images and lazy loading -->
+    <img class="poster__image"
+         loading="lazy"
+         [src]="'https://image.tmdb.org/t/p/w220_and_h330_face/' + model.poster_path"
+         [srcset]="'https://image.tmdb.org/t/p/w220_and_h330_face/' + model.poster_path + ' 1x, ' +
+                   'https://image.tmdb.org/t/p/w440_and_h660_face/' + model.poster_path + ' 2x'"
+         [alt]="model.title || model.name + ' poster'"
+         appImgMissingDirective
+         [height]="330"
+         [width]="220">
+  </a>
+
+  <div class="poster__content">
+
+    <a *ngIf="model.title || model.name"
+       [routerLink]="isMovie ? '/movies/' + model.id : '/tv-shows/' + model.id"
+       [title]="model.title || model.name + ' details'"
+       class="poster__title colored-hover">
+      {{ model.title || model.name }}
+    </a>
+    <div class="poster__details">
+      <p *ngIf="model.release_date || model.first_air_date" class="poster__date">
+        <!-- Formatted release date for better user readability -->
+        {{ (model.release_date || model.first_air_date) | date:'longDate' }}
+      </p>
+      <p *ngIf="model.vote_average" class="poster__rating">
+        Rating: {{ model.vote_average }}/10
+      </p>
+      <p *ngIf="model.genre_ids" class="poster__genres">
+        <!-- Genre IDs converted to genre names, assuming a genre mapping exists -->
+        Genres: <span *ngFor="let genreId of model.genre_ids; let i = index; let isLast=last">
+                  {{ convertGenreIdToName(genreId) }}<span *ngIf="!isLast">, </span>
+                </span>
+      </p>
+      <p *ngIf="model.overview" class="poster__overview">
+        {{ model.overview | slice:0:100 }}<span *ngIf="model.overview.length > 100">...</span>
+      </p>
+    </div>
+  </div>
+</div>

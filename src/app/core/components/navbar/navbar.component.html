@@ -1,0 +1,22 @@
+<header class="navbar__container" [class.colored__scrolled]="isScrolled">
+
+  <nav class="navbar__nav container">
+    <a [routerLink]="''" class="navbar__logo" aria-label="Home">
+      <img src="assets/images/logo.svg" alt="Movie-FLIX" />
+    </a>
+
+    <div class="navbar__list">
+      <a mat-button [routerLink]="''" [routerLinkActive]="['activated-route']" [routerLinkActiveOptions]="{exact: true}" aria-label="Home">Home</a>
+      <a mat-button [routerLink]="'movies'" [routerLinkActive]="['activated-route']" aria-label="Movies">Movies</a>
+      <a mat-button [routerLink]="'tv-shows'" [routerLinkActive]="['activated-route']" aria-label="TV Shows">TV Shows</a>
+      <a mat-button [routerLink]="'search'" [routerLinkActive]="['activated-route']" aria-label="Search">Search</a>
+      <button mat-button *ngIf="isLoggedIn; else signInTemplate" (click)="signOut()">Sign Out</button>
+<ng-template #signInTemplate>
+  <button mat-button (click)="signIn()">Sign In</button>
+</ng-template>
+<app-voice-command></app-voice-command>
+
+    </div>
+  </nav>
+
+</header>

@@ -1,0 +1,15 @@
+<main class="contents container">
+  <h2>All {{contentType | titlecase}} #NowPlaying</h2>
+  <div class="contents__container">
+    <mat-card class="contents__filter">
+      <div>Filter by</div>
+      <button mat-raised-button color="primary" aria-label="Set Now Playing filter" disabled>Now Playing</button>
+      <button mat-raised-button color="primary" aria-label="Set Upcoming filter" disabled>Upcoming</button>
+      <button mat-raised-button color="primary" aria-label="Set Popular filter" disabled>Popular</button>
+    </mat-card>
+    <div class="contents__list" infiniteScroll [infiniteScrollDistance]="0.8" [infiniteScrollThrottle]="150" (scrolled)="onScroll()">
+      <app-poster-card *ngFor="let content of nowPlaying" [model]="content" [isMovie]="contentType === 'movies'"></app-poster-card>
+    </div>
+  </div>
+    
+</main>

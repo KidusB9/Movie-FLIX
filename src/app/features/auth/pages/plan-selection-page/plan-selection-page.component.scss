@@ -1,0 +1,104 @@
+.plan-selection-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  .selection-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .selection-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+  .subscription-plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .plan {
+      background: #606613;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: calc(33.333% - 20px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .plan-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .plan-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+
+        li {
+          margin-bottom: 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      input[type="radio"] {
+        margin-top: auto;
+        margin-bottom: 0.5rem;
+      }
+
+      label {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken(#007bff, 5%);
+        }
+      }
+    }
+  }
+
+  .form-submit {
+    margin-top: 2rem;
+    text-align: center;
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      font-size: 1rem;
+      padding: 10px 30px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#007bff, 5%);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .subscription-plans {
+    flex-direction: column;
+    align-items: center;
+
+    .plan {
+      width: 80%;
+    }
+  }
+}

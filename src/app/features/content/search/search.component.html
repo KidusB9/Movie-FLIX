@@ -1,0 +1,19 @@
+<div class="search-container">
+  <form (ngSubmit)="search()">
+    <input type="text" [(ngModel)]="searchTerm" name="searchTerm" required placeholder="Search for movies...">
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- This div structure ensures that the grid is shown only if there are search results -->
+  <div *ngIf="searchResults && searchResults.length > 0" class="results-grid">
+    <!-- Updated to use navigateToDetail for click event -->
+    <div *ngFor="let item of searchResults" class="movie-item" (click)="navigateToDetail(item)">
+      <img src="https://image.tmdb.org/t/p/w500{{item.poster_path}}" alt="{{ item.title || item.name }} Poster" class="movie-poster"/>
+      <p class="movie-title">{{ item.title || item.name }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="searchResults && searchResults.length === 0">
+    <p>No results found.</p>
+  </div>
+</div>

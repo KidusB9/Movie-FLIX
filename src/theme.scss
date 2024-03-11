@@ -1,0 +1,75 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+// Base theme setup
+$base-palettes: (
+  "red": mat.$red-palette,
+  "blue": mat.$blue-palette,
+  "green": mat.$green-palette,
+  "amber": mat.$amber-palette,
+  "purple": mat.$purple-palette,
+  "indigo": mat.$indigo-palette,
+  "pink": mat.$pink-palette,
+  "lime": mat.$lime-palette,
+  "deep-orange": mat.$deep-orange-palette,
+  "teal": mat.$teal-palette,
+);
+
+// Dynamically generate themes
+@mixin generate-themes($palettes) {
+  @each $color-name, $palette in $palettes {
+    .#{$color-name}-theme {
+      $primary-palette: mat.define-palette($palette);
+      $accent-palette: mat.define-palette(map.get($palettes, "amber"), A200, A100, A400); // Using amber as default accent
+      $theme: mat.define-light-theme((
+        color: (
+          primary: $primary-palette,
+          accent: $accent-palette
+        )
+      ));
+
+      @include mat.all-component-themes($theme);
+
+      ::selection { background-color: mat.get-color-from-palette($primary-palette, 500); }
+      .colored-hover:hover { color: mat.get-color-from-palette($primary-palette, 500); }
+      swiper-container::part(bullet-active) { background-color: mat.get-color-from-palette($primary-palette, 500); }
+      .activated-route { border-color: mat.get-color-from-palette($primary-palette, 500) !important; }
+      .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline { border-color: mat.get-color-from-palette($primary-palette, 500); }
+    }
+  }
+}
+
+@include generate-themes($base-palettes);
+
+// Dialog styles
+.dialog-title-container {
+  cursor: move;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+
+  a {
+    float: right;
+    color: white;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mdc-dialog-container {
+  padding: 0 !important;
+}
+
+.mdc-dialog__content {
+  padding: 0 !important;
+  margin: 0 !important;
+}
