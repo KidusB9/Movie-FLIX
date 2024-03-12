@@ -1,4 +1,4 @@
-# MovieFlix Voice Command Application
+# MovieFlix, Movies and Tv Streaming service
 
 Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-edge technologies to deliver a seamless and interactive user experience. MovieFlix is not just another movie database; it's your voice-controlled gateway to discovering movies and TV shows. Powered by OpenAI's GPT-3.5 for natural language processing and Angular for a dynamic frontend, MovieFlix offers an innovative approach to search and navigation.
 
