@@ -31,7 +31,7 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
    cd MovieFlix/NotFlixapi
    npm install
    ```
-   ###then run npm start server in the backend 
+    
    ```
    // For frontend
    cd MovieFlix/
