@@ -60,3 +60,19 @@ We welcome contributions! Please feel free to fork the repository, make your cha
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## DEMO
+![Screenshot 2024-03-11 032515](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/Screenshot%202024-03-11%20032515.png)
+
+![Choose Plan](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/chooseplan.png)
+
+![Screenshot 2024-03-11 032543](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/Screenshot%202024-03-11%20032543.png)
+
+![Register](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/REGISTER.png)
+
+![Login](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/login.png)
+
+![Search](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/search.png)
+
+![Youtube](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/youtube.png)
+
