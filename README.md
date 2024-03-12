@@ -29,13 +29,15 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
 
   // For backend
    cd MovieFlix/NotFlixapi
-   npm install
+  
    ```
-    
+ npm install 
    ```
    // For frontend
    cd MovieFlix/
+    ```
    npm install
+    ```
   
 
    
