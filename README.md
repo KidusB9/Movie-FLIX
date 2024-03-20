@@ -50,11 +50,11 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
    - Add your MongoDB URI, JWT secret, and OpenAI API key.
    - navigate to src/environments and add your open ai api key in both .ts and prod.ts 
 
-4. Start the backend server.
+4. Start the backend server in  cd movie-flix/notflixapi.
    ```
    npm start server
    ```
-5. Launch the frontend application.
+5. Launch the frontend application. cd movie-flix
    ```
    ng serve
    ```
