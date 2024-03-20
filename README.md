@@ -1,6 +1,6 @@
-# MovieFlix Voice Command Application
+# MovieFlix, Movies and Tv Streaming service
 
-Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-edge technologies to deliver a seamless and interactive user experience. MovieFlix is not just another movie database; it's your voice-controlled gateway to discovering movies and TV shows. Powered by OpenAI's GPT-3 for natural language processing and Angular for a dynamic frontend, MovieFlix offers an innovative approach to search and navigation.
+Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-edge technologies to deliver a seamless and interactive user experience. MovieFlix is not just another movie database; it's your voice-controlled gateway to discovering movies and TV shows. Powered by OpenAI's GPT-3.5 for natural language processing and Angular for a dynamic frontend, MovieFlix offers an innovative approach to search and navigation.
 
 ## Features
 
@@ -16,7 +16,7 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
 - Express.js
 - MongoDB
 - JWT for Authentication
-- OpenAI's GPT-3
+- OpenAI's GPT-3.5
 - Speech Recognition API
 
 ## Getting Started
@@ -29,23 +29,26 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
 
   // For backend
    cd MovieFlix/NotFlixapi
-   npm install
+  
    ```
-   ###then run npm start server in the backend 
+ npm install 
    ```
    // For frontend
    cd MovieFlix/
+    ```
    npm install
+    ```
   
 
    
 3. Set up your environment variables.
    - Create a `.env` file in your backend directory.
    - Add your MongoDB URI, JWT secret, and OpenAI API key.
+   - navigate to src/environments and add your open ai api key in both .ts and prod.ts 
 
 4. Start the backend server.
    ```
-   npm start
+   npm start server
    ```
 5. Launch the frontend application.
    ```
@@ -60,3 +63,19 @@ We welcome contributions! Please feel free to fork the repository, make your cha
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## DEMO
+![Screenshot 2024-03-11 032515](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/Screenshot%202024-03-11%20032515.png)
+
+![Choose Plan](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/chooseplan.png)
+
+![Screenshot 2024-03-11 032543](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/Screenshot%202024-03-11%20032543.png)
+
+![Register](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/REGISTER.png)
+
+![Login](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/login.png)
+
+![Search](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/search.png)
+
+![Youtube](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/youtube.png)
+
