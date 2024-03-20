@@ -1,9 +1,12 @@
 <div class="register-container">
+
+
   <div class="register-header">
       <h2>Create Your Account</h2>
       <p>Sign up to start your journey.</p>
   </div>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div class="form-group">
           <p class="login-link">Already have an account? <a routerLink="/login">Login here</a></p>
           <label for="email">Email:</label>

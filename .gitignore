@@ -8,6 +8,8 @@
 # dependencies
 /node_modules
 src/environments/
+notflixapi/node_modules
+notflixapi/.env
 
 # IDEs and editors
 /.idea

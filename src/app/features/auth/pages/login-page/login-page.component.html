@@ -5,7 +5,7 @@
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
       <div class="form-group">
-          <p class="register-link">Don't have an account? <a routerLink="/register/plan">Choose a plan</a></p>
+          <p class="register-link">Don't have an account? <a routerLink="/register">Register Here</a></p>
           <label for="email">Email:</label>
           <input type="email" id="email" formControlName="email" class="form-control">
           <div *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="error-message">

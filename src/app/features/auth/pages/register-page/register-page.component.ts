@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 })
 export class RegisterPageComponent {
   registerForm: FormGroup;
+  errorMessage: string | null = null;
 
   constructor(private fb: FormBuilder, @Inject(UserService) private userService: UserService, private router: Router)  {
     // Initialize form group with form controls
@@ -24,26 +25,26 @@ export class RegisterPageComponent {
   }
 
   // Inside your RegisterPageComponent
-onSubmit() {
-  if (this.registerForm.valid) {
+  onSubmit() {
+    if (this.registerForm.valid) {
+      const plan = localStorage.getItem('selectedPlan'); // plan is stored in local storage
+      const registrationData = {
+        ...this.registerForm.value,
+        plan: plan // Include the plan in the registration payload
+      };
 
-    const plan = localStorage.getItem('selectedPlan'); // Assuming plan is stored in local storage
-    const registrationData = {
-      ...this.registerForm.value,
-      plan: plan // Include the plan in the registration payload
-    };
-    // this.userService.register(this.registerForm.value).subscribe({
       this.userService.register(registrationData).subscribe({
-      next: (response) => {
-        console.log('User registered', response);
-        // Optionally log the user in directly and navigate to a protected page
-
-        localStorage.setItem('authToken', response.token);
-        this.router.navigate(['/movies']);
-      },
-      error: (error) => console.error('Registration error', error)
-    });
+        next: (response) => {
+          console.log('User registered', response);
+          this.router.navigate(['/register/user-info']);
+        },
+        error: (error) => {
+          console.error('Registration error', error);
+          this.errorMessage = error.error.message || 'Registration failed. Please try again.';
+        }
+      });
+    }
   }
 }
-}
+
 

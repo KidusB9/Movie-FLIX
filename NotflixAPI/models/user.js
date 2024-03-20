@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   },
   plan: {
     type: String,
-    required: false, // Make it optional since not all users might select a plan upon registration
+    required: true, // Make it optional since not all users might select a plan upon registration
   },
 
 });

@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config();
@@ -7,21 +8,39 @@ const fetch = require('node-fetch');
 
 const universitiesRouter = require('./routes/universities.js');
 
+
+
+
+
+
 app.use(cors({
   origin: 'http://localhost:4200',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH','OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 // import universitiesRouter from './routes/universities'; // Import the universities router
 
 
 
+app.use(express.json());
+app.use(cookieParser());
+
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.path}`);
+  next();
+});
+
 const userRoutes = require('./routes/users');
 
 
-app.use(express.json());
+
 app.use('/api/users', userRoutes);
 app.use(universitiesRouter);
+
+
+
+
 
 
 
@@ -73,7 +92,9 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is running on port ${port}...`));
 
 
-
-
-// Routes
 app.use('/api/users', userRoutes);
+
+
+
+
+

@@ -12,14 +12,18 @@ export const routes: Routes = [
 
   // Login route
   { path: 'login', loadComponent: () => import('./features/auth/pages/login-page/login-page.component').then(m => m.LoginPageComponent) },
+  { path: 'register', loadComponent: () => import('./features/auth/pages/register-page/register-page.component').then(m => m.RegisterPageComponent) },
+  { path: 'register/plan', loadComponent: () => import('./features/auth/pages/plan-selection-page/plan-selection-page.component').then(m => m.PlanSelectionPageComponent) },
+
+  { path: 'register/user-info', loadComponent: () => import('./features/auth/pages/user-info/user-info.component').then(m => m.UserInfoComponent) },
 
   // Register route
-  { path: 'register', loadComponent: () => import('./features/auth/pages/register-page/register-page.component').then(m => m.RegisterPageComponent) },
+
 
   { path: 'voice-command', loadComponent: () => import('./features/voice-command/voice-command.component').then(m => m.VoiceCommandComponent) },
 
 
-  { path: 'register/plan', loadComponent: () => import('./features/auth/pages/plan-selection-page/plan-selection-page.component').then(m => m.PlanSelectionPageComponent) },
+
 
 
   { path: '404', loadComponent: () => import('./core/components/not-found/not-found.component').then(m => m.NotFoundComponent) },

@@ -8,7 +8,7 @@ import { map, take } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  
+
   constructor(private router: Router, private authService: AuthService) {}
 
   canActivate(
@@ -33,6 +33,6 @@ export class AuthGuard implements CanActivate {
   }
 
   private storeRedirectUrl(url: string): void {
-    localStorage.setItem('redirectUrl', url); // Consider moving this logic inside AuthService for encapsulation
+    localStorage.setItem('redirectUrl', url);
   }
 }

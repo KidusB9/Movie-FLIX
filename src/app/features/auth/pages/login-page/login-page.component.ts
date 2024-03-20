@@ -33,22 +33,21 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('LoginPageComponent: onSubmit triggered');
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe({
-        next: (response) => {
-          console.log('Login successful', response);
-          // the key matches the one checked by on AuthGuard
-          // localStorage.setItem('authToken', response.token);
-          localStorage.setItem('token', response.token);
-
-          this.router.navigate(['/movies']);
-        },
-        error: (error) => {
-          console.error('Login failed', error);
-          // Set the error message
-          this.errorMessage = 'Login failed. Please register first if you are a new user.';
-        }
-      });
+        console.log('LoginPageComponent: Form is valid, attempting to login', this.loginForm.value);
+        this.authService.login(this.loginForm.value).subscribe({
+            next: (response) => {
+                console.log('LoginPageComponent: Login successful', response);
+                this.router.navigate(['/movies']);
+            },
+            error: (error) => {
+                console.error('LoginPageComponent: Login failed', error);
+                this.errorMessage = 'Login failed. Please register first if you are a new user.';
+            }
+        });
+    } else {
+        console.log('LoginPageComponent: Form is invalid');
     }
-  }
+}
 }
