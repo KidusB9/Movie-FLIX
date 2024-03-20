@@ -1,13 +1,17 @@
 # MovieFlix, Movies and Tv Streaming service
 
-Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-edge technologies to deliver a seamless and interactive user experience. MovieFlix is not just another movie database; it's your voice-controlled gateway to discovering movies and TV shows. Powered by OpenAI's GPT-3.5 for natural language processing and Angular for a dynamic frontend, MovieFlix offers an innovative approach to search and navigation.
+Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-edge technologies to deliver a seamless and interactive user experience. MovieFlix is not just another movie database; it's your voice-controlled gateway to discovering movies and TV shows. Powered by OpenAI's GPT-4 for natural language processing and Angular for a dynamic frontend, MovieFlix offers an innovative approach to search and navigation.
 
 ## Features
 
 - **Voice Commands:** Navigate through the app, search movies, and more - all hands-free.
 - **Rich Movie Database:** Access a vast collection of movies and TV shows with detailed information.
-- **User Authentication:** Secure login and registration functionality with JWT for a personalized experience.
+- **User Authentication:** Secure login and registration functionality with JWT and cookie-based sessions for a personalized and secure experience.
+- **Dynamic User Profiles:** Update user information seamlessly with real-time updates and cookie-based session management
 - **Responsive Design:** Enjoy a seamless experience across all your devices, thanks to Angular.
+- **Advanced Search Functionality:** Utilize the power of natural language processing to find your favorite movies and shows.
+- **Personalized Recommendations:** Get movie and TV show recommendations based on your viewing history and preferences.
+-**Interactive UI:** Engage with a user-friendly interface that enhances your browsing experience.
 
 ## Technologies Used
 
