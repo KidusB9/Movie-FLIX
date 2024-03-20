@@ -20,7 +20,7 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
 - Express.js
 - MongoDB
 - JWT for Authentication
-- OpenAI's GPT-3.5
+- OpenAI's GPT-4
 - Speech Recognition API
 
 ## Getting Started
