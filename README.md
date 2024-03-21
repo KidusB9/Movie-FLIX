@@ -82,4 +82,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ![Search](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/search.png)
 
 ![Youtube](https://github.com/Kidus-berhanu/Movie-FLIX/blob/master/youtube.png)
+![User info](https://raw.githubusercontent.com/Kidus-berhanu/Movie-FLIX/master/Screenshot%202024-03-19%20224540.png)
+
 
