@@ -46,9 +46,9 @@ Welcome to MovieFlix, a state-of-the-art web application that leverages cutting-
 
    
 3. Set up your environment variables.
-   - Create a `.env` file in your backend directory.
+   - Create a `.env` file in NotflixAPI directory.
    - Add your MongoDB URI, JWT secret, and OpenAI API key.
-   - navigate to src/environments and add your open ai api key in both .ts and prod.ts 
+   - navigate to src/environments  and add your open ai api key in both .ts and prod.ts 
 
 4. Start the backend server in  cd movie-flix/notflixapi.
    ```
